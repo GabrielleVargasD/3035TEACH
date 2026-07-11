@@ -1,0 +1,226 @@
+@import url('https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap');
+
+:root {
+    --bege: #baa88d;
+    --light-bege: #ebe4dd;
+    --light-gray: #f5f4f2;
+
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Montserrat", sans-serif;
+    color: inherit;
+    text-decoration: none;
+}
+
+.logo {
+    display: flex;
+    width: 40px;
+    height: 40px;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    /* Fica em cima de todo mundo*/
+    background-color: white;
+    width: 100%;
+
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+nav {
+    display: flex;
+    gap: 40px;
+    cursor: pointer;
+}
+
+.banner img {
+    width: 100%;
+}
+
+.postagens {
+    display: flex;
+    align-items: center;
+    gap: 40px;
+}
+
+.imagens-postagens {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    gap: 20px;
+    margin: 10px;
+
+}
+
+.imagens-postagens img {
+    width: 550px;
+    height: 600px;
+    transition: transform .6s ease;
+    filter: brightness(75%);
+    object-fit: cover;
+}
+
+.imagens-postagens img:hover {
+    transform: scale(1.03);
+}
+
+.card {
+    width: 550px;
+    position: relative;
+    overflow: hidden;
+    /* evita q a imagem fique escapando e saindo por cima*/
+}
+
+.card h2 {
+    font-size: 38px;
+    color: white;
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+}
+
+.info-card{
+    text-align: center;
+    background-color: var(--light-bege);
+    padding: 20px;
+    
+}
+
+
+.texto-postagens {
+    background-color: var(--light-gray);
+    width: 550px;
+    height: 600px;
+
+    display: flex;
+    flex-direction: column;
+
+    align-items: center;
+    justify-content: center;
+
+    gap: 20px;
+}
+
+.texto-postagens p {
+    font-size: x-large;
+}
+
+.texto-postagens button {
+    font-size: x-large;
+    border: none;
+    background-color: var(--light-bege);
+    color: rgb(0, 0, 0);
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+.texto-postagens button:hover {
+    background-color: var(--bege);
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+}
+
+.sobre-nos {
+    position: relative;
+    width: 100%;
+    height: 500px;
+    overflow: hidden;
+}
+
+.sobre-nos img {
+    width: 100%;
+    height: 100%;
+    object-fit: cover;
+    filter: brightness(75%);
+}
+
+.texto-sobre {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+    color: white;
+    text-align: center;
+    font-size: xx-large;
+}
+
+.texto-sobre button {
+    font-size: x-large;
+    border: none;
+    background-color: var(--light-bege);
+    color: rgb(0, 0, 0);
+    width: 300px;
+    height: 40px;
+    border-radius: 20px;
+    transition: 0.5s;
+}
+
+.texto-sobre button:hover {
+    background-color: var(--bege);
+    color: rgb(255, 255, 255);
+    transition: 0.5s;
+    cursor: pointer;
+}
+
+footer {
+    background-color: var(--bege);
+}
+
+#footer-nav {
+    display: flex;
+    cursor: pointer;
+    justify-content: center;
+}
+
+@media screen and (min-width: 768px) and (max-width:1024px) {
+        
+        .card{
+        width: 350px;
+    }
+
+    .postagens{
+        flex-direction: column;
+    }
+    .imagens-postagens {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 20px;
+        margin: 10px;
+    }
+}
+
+@media screen and (max-width:768px) {
+        header{
+        flex-direction: column;
+    }
+    .postagens{
+        flex-direction: column;
+    }
+
+    .imagens-postagens{
+        grid-template-columns:1fr;
+    }
+
+    .imagens-postagens img{
+        width:100%;
+        height:400px;
+    }
+
+    .texto-postagens{
+        width:65%;
+        height:300px;
+    }
+
+}
