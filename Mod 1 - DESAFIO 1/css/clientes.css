@@ -1,0 +1,46 @@
+#lista-clientes{
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 30px;
+}
+
+
+.card-cliente{
+    background-color: var(--peach);
+    width: 250px;
+    padding: 20px;
+    border-radius: 15px;
+    text-align: center;
+    cursor: pointer;
+    border: 2px solid var(--dusty-rose);
+}
+
+
+.card-cliente:hover{
+    transform: scale(1.05);
+}
+
+
+.modal{
+    display: none;
+    position: fixed;
+    inset: 0;
+    background-color: rgba(0,0,0,0.5);
+    justify-content: center;
+    align-items: center;
+}
+
+
+.conteudo-modal{
+    background-color: var(--cream);
+    padding: 30px;
+    border-radius: 15px;
+    width: 400px;
+}
+
+
+#fechar{
+    cursor: pointer;
+    float: right;
+}

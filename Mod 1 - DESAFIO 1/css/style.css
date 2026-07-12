@@ -1,0 +1,120 @@
+@import url('https://fonts.googleapis.com/css2?family=Lato:wght@400;900&display=swap');
+
+:root {
+    --cream: #fff9f0;
+    --peach: #FFD6D2;
+    --soft-pink: #FEA9BB;
+    --dusty-rose: #C56588;
+    --mauve-brown: #795262;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: "Lato", sans-serif;
+    text-decoration: none;
+}
+
+body {
+    background-color: var(--cream);
+    scroll-behavior: smooth;
+}
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 1000;
+    background-image: linear-gradient(to right, var(--peach), var(--soft-pink));
+    border-bottom: 2px solid var(--cream);
+    
+    width: 100%;
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    padding: 20px 60px;
+}
+
+nav {
+    display: flex;
+    gap: 30px;
+}
+
+nav a {
+    color: var(--mauve-brown);
+    font-size: 18px;
+    font-weight: 900;
+    text-decoration:underline;
+
+}
+
+.identificacao {
+    display: flex;
+    align-items: center;
+    gap: 10px;
+}
+
+.identificacao h1 {
+    font-size: 20px;
+    color: var(--dusty-rose);
+    font-weight: 900;
+}
+
+.identificacao img {
+    width: 40px;
+    height: 40px;
+}
+.pesquisa{
+    display: flex;
+}
+
+.pesquisa button{
+    border: none;
+    background-color: #C56588;
+    border-top-right-radius: 5px;
+    border-bottom-right-radius: 5px;
+}
+
+.pesquisa img{
+    width: 13px;
+    height: 13px;
+}
+
+.pesquisa input{
+    width: 300px;
+    height: 25px;
+    border-top-left-radius: 5px;
+    border-bottom-left-radius: 5px;
+    background-image: linear-gradient(to right, var(--cream), var(--peach));
+    border: 1px solid var(--mauve-brown);
+}
+
+footer{
+    background-image: linear-gradient(to right, var(--peach), var(--soft-pink));
+    padding: 20px 0;
+}
+
+.footer-top{
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+}
+footer img{
+    width: 40px;
+    height: 40px;
+}
+
+footer nav a{
+    color: var(--dusty-rose);
+}
+
+footer p{
+    margin-top: 20px;
+    color: var(--dusty-rose);
+    font-weight: 600;
+}
+
+
+@media screen and (min-width: 768px) and (max-width:1024px) {}
+
+@media screen and (max-width:768px) {}
