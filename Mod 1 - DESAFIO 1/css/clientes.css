@@ -1,3 +1,8 @@
+.titulo-clientes{
+    margin-top: 20px;
+    color: var(--dusty-rose);
+}
+
 #lista-clientes{
     display: flex;
     flex-wrap: wrap;
@@ -14,6 +19,8 @@
     text-align: center;
     cursor: pointer;
     border: 2px solid var(--dusty-rose);
+    margin-bottom: 20px;
+    margin-top: 20px;
 }
 
 
