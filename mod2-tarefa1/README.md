@@ -1,46 +1,29 @@
-# Getting Started with Create React App
+# Documentação da tarefa – Contador de Cliques
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Enunciado
 
-## Available Scripts
+> “Criar uma tela com um botão e mostrar a quantidade de vezes que ele está sendo clicado pelo usuário. O link do GitHub com a tarefa deve ser postado nos comentários.”
 
-In the project directory, you can run:
+## Passos para resolução da tarefa
 
-### `npm start`
+### 1ª etapa: Organização do ambiente e primeiros erros
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+Organizei as pastas e criei um projeto React pelo terminal. Logo após, abri meu VS Code e percebi que havia alguns erros. O primeiro erro era no import do arquivo `App.css` no arquivo `App.tsx`. Para resolver isso, precisei criar um novo arquivo chamado `declarations.d` e, dentro dele, definir:
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+```ts
+declare module "*.css";
+```
 
-### `npm test`
+Esse comando basicamente diz ao TypeScript que caminhos com `.css` são válidos e que não é necessário procurar um módulo TypeScript dentro deles.
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+Também dei uma limpada no código, retirando algumas coisas que eu não iria precisar para essa tarefa.
 
-### `npm run build`
+### 2ª etapa: Criação da `function App`, `increase` e `decrease`
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+Criei uma `function App` para guardar minhas constantes `count` e `setCount`, sendo `count` o número atual e `setCount` a função responsável por alterar o valor de `count` de acordo com as funções `increase` ou `decrease`.
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Depois disso, criei as funções `increase` e `decrease`, que servem, respectivamente, para aumentar e diminuir o valor de `count`.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Dentro do `return`, chamo o meu `count` para mostrar o número atual na tela. Logo abaixo, crio dois botões: um com o sinal de `+`, que chama a função `increase` quando clicado, e outro com o sinal de `-`, que chama a função `decrease`.
 
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+Dessa forma, fiz meu contador simples utilizando o `useState` e algumas funções.
