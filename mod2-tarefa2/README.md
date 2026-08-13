@@ -1,46 +1,33 @@
-# Getting Started with Create React App
+Enunciado
+Utilizando o json anexado abaixo, exibir os filmes em formato de tabela e criar um campo de pesquisa para filtrar o valor digitado e mostrar em tela o item localizado.O link do github com a tarefa deve ser postado nos comentários.
+Vídeos utilizados para realização da tarefa:
+https://www.youtube.com/watch?v=hson9BXU9F8&list=PLC3y8-rFHvwgWTSrDiwmUsl4ZvipOw9Cz&index=4 
+1ª etapa: Organização do ambiente e primeiros erros
+Organizei as pastas e criei um projeto React pelo terminal. Logo após, abri meu VS Code e percebi que havia alguns erros. O primeiro erro era no import do arquivo “App.css” no arquivo “App.tsx”. Para resolver isso, precisei criar um novo arquivo chamado “declarations.d” e, dentro dele, definir declare module "*.css";. Esse comando basicamente diz ao TypeScript que caminhos com .css são válidos e que não é necessário procurar um módulo TypeScript dentro deles.
+Também dei uma limpada no código, retirando algumas coisas que eu não iria precisar para essa tarefa.
+Além disso, criei uma pasta chamada components onde coloquei uma outra pasta chamada Table, nela irei colocar todos os arquivos relacionados a construção da tabela.
+2ª etapa: Organizar os passos necessários para a resolução da tarefa
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+1. Definir as colunas da tabela com base nos dados do arquivo filmes.json
+2. Utilizar react-table para criar uma tabela utilizando os dados contidos nas colunas
+3. Definir uma estrutura básica utilizando html
+4. Organizar os dados da tabela no html
+5. Ajustar o css da tabela
 
-## Available Scripts
+3ª etapa: colocar em prática a resolução da tarefa
+ Definir as colunas da tabela com base nos dados do arquivo filmes.json
+Primeiro, analisei os dados contidos no arquivo filmes.json, e determinei que minhas chaves principais são id, nome, genero e imagem. Dessa forma, criei um arquivo chamado “columns.js” para poder tratar esses dados.  Separei cada chave contida no arquivo fiomes.js em um array de objetos chamado COLUMNS. Também tratei o link das imagens para poderem ser visíveis na tabela. 
 
-In the project directory, you can run:
 
-### `npm start`
+Utilizar react-table para criar uma tabela utilizando os dados contidos nas colunas
+Criei um arquivo chamado BasicTable.js, que será o arquivo “mãe” de toda a nossa funcionalidade da tabela. Fiz os imports necessários e criei conts para armazenam os dados do arquivo COLUMNS.js e filmes.js, dessa forma consegui criar um objeto tableInstance e passei os dados das colunas e do filme para ele. Também instanciei algumas variáveis que eu irei usar mais pra frente como getTableProps, getTableBodyProps, entre outros…
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+3. Definir uma estrutura básica utilizando html
+Depois disso, criei dentro do return um formato de tabela em html além de um local para o input, onde utilizei o setGlobalFilter para poder funcionar como um filtro de pesquisa para os dados da tabela.
+4. Organizar os dados da tabela no html
+Depois disso, comecei a utilizar diferentes variáveis para poder relacionar os dados da tabela ao html, utilizando várias funções… Apesar dessa parte ser confusa, consegui entender um pouco o seu funcionamento. 
+5. Ajustar o css da tabela
+Depois da estrutura da tabela totalmente pronta, fui para a parte da estilização, onde não dei um foco muito grande e apenas utilizei um template disponibilizado na w3schools. 
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
-
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
-
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
-
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
+3ª etapa: Resultados e conclusões
+Achei essa tarefa relativamente complexa, a parte que mais me deixou confusa foi a questão de relacionar os dados da tabela com o html utilizando as funções do react-table, foi minha primeira vez fazendo um projeto assim mas acredito que com a prática posso melhorar bastante. Em partes em que eu me senti presa ou confusa, procurei algums agentes de IA para poder me esclarecer as dúvidas. Tentei fazer o máximo sozinha, mas por ser uma estrutura complicada para alguem que recem começou a aprender react agr, busquei um tutorial e consegui segui-lo e entendê-lo bem. Busquei varias formas que fazer o filtro de pesquisas també, e acabei escolhendo a forma mais fácil que era usando  o globalFilter…. Em geral, sinto que aprendi bastante de react e adquiri mais familiaridade com a sua estrutura. 
