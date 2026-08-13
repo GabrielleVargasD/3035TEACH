@@ -1,0 +1,1 @@
+declare module "*.css"; //Diz pro typescript q arquivos com .css são válidos e não precisa procurar um módulo typeScript dentro dele
