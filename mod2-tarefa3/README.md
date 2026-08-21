@@ -1,46 +1,61 @@
-# Getting Started with Create React App
+# Relatório da Tarefa — Checkbox de Filmes
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## Enunciado
 
-## Available Scripts
+Utilizando a mesma lista com 6 filmes da tarefa 2, mas agora com um novo parâmetro `checked`, exibir o nome do filme juntamente com um checkbox. Assim que um checkbox for clicado (`checked=true`), deve ser mostrada uma mensagem apresentando o nome do filme que foi selecionado.
 
-In the project directory, you can run:
+## Materiais utilizados
 
-### `npm start`
+- [How to create a React Checkbox — Robin Wieruch](https://www.robinwieruch.de/react-checkbox/)
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in the browser.
+## 1ª etapa: Organização dos dados
 
-The page will reload if you make edits.\
-You will also see any lint errors in the console.
+Utilizei a mesma lista de 6 filmes da tarefa anterior, porém adicionei o parâmetro `checked` em cada objeto do arquivo `filmes.json`.
 
-### `npm test`
+Inicialmente, todos os filmes possuem:
 
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
+```json
+"checked": false
+```
 
-### `npm run build`
+O objetivo é alterar esse valor para `true` quando o usuário selecionar um filme.
 
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
+## 2ª etapa: Desenvolvimento
 
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
+Criei um componente chamado `Check.js` e importei o arquivo `filmes.json` para utilizar os dados dos filmes.
 
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
+Utilizei o `useState` para controlar a lista de filmes:
 
-### `npm run eject`
+```js
+const [listaFilmes, setListaFilmes] = useState(filmes);
+```
 
-**Note: this is a one-way operation. Once you `eject`, you can’t go back!**
+Depois, utilizei o método `map()` para percorrer a lista e exibir o nome de cada filme juntamente com um checkbox.
 
-If you aren’t satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
+Cada checkbox utiliza o valor `checked` do próprio filme, permitindo que cada item tenha seu estado independente.
 
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you’re on your own.
+Para identificar qual filme foi selecionado, utilizei seu `id`. Quando o checkbox é alterado, o código percorre a lista e modifica somente o filme correspondente, invertendo seu valor de `checked`:
 
-You don’t have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn’t feel obligated to use this feature. However we understand that this tool wouldn’t be useful if you couldn’t customize it when you are ready for it.
+```js
+checked: !filme.checked
+```
 
-## Learn More
+## 3ª etapa: Mensagem de seleção
 
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
+Após identificar o filme selecionado, utilizei um `alert()` para mostrar uma mensagem contendo seu nome.
 
-To learn React, check out the [React documentation](https://reactjs.org/).
+Por exemplo:
+
+```text
+Filme selecionado: Homem Aranha
+```
+
+A mensagem é exibida somente quando o filme está sendo selecionado. Ao desmarcar o checkbox, nenhuma mensagem é exibida.
+
+## 4ª etapa: Resultados e conclusões
+
+A tarefa foi mais simples que a anterior, mas ajudou a compreender melhor o funcionamento do `useState`, dos eventos `onChange` e da manipulação de listas em React.
+
+Também pude entender melhor como trabalhar com diferentes estados dentro de uma lista, fazendo com que cada checkbox altere somente o filme correspondente.
+
+Utilizei o material de apoio de Robin Wieruch para compreender melhor o funcionamento dos checkboxes controlados em React, principalmente a utilização de `useState`, `checked` e `onChange`.
