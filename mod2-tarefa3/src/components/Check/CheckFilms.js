@@ -1,28 +1,47 @@
-import React, { useState } from 'react';
+import React, { useState } from "react";
 import filmes from "./filmes.json";
 
 export const Check = () => {
 
-    const [checked, setChecked] = useState(false)
+    const [listaFilmes, setListaFilmes] = useState(filmes);
 
-    const handleChange = () => {
-        setChecked(!checked);
-    };
+   const handleChange = (id) => {
+
+    setListaFilmes(
+        listaFilmes.map((filme) => {
+
+            if (filme.id === id) {
+
+                if (!filme.checked) {
+                    alert(`Filme selecionado: ${filme.nome}`);
+                }
+
+                return {
+                    ...filme,
+                    checked: !filme.checked
+                };
+            }
+
+            return filme;
+        })
+    );
+};
 
     return (
         <>
-            {filmes.map((filme) => (
-                <div>
+            {listaFilmes.map((filme) => (
+                <div key={filme.id}>
+
                     <input
                         type="checkbox"
-                        checked={checked}
-                        onChange={handleChange}
+                        checked={filme.checked}
+                        onChange={() => handleChange(filme.id)}
                     />
-                     {filme.nome}
+
+                    {filme.nome}
+
                 </div>
             ))}
-
         </>
     );
-
-}
+};
